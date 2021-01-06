@@ -7,43 +7,63 @@
     <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2">
         <a class="text-success" (click)="add()">
-          <button type="button" class="btn btn-success">Dodaj</button>
+          <button type="button" class="btn btn-success">Dodaj novu fakturu</button>
         </a>
       </span>
       <table class="table table-bordered table-responsive-md table-striped text-center">
         <tr>
-          <th class="text-center">Person Name</th>
-          <th class="text-center">Age</th>
-          <th class="text-center">Company Name</th>
-          <th class="text-center">Country</th>
-          <th class="text-center">City</th>
-          <th class="text-center">Edit/Remove</th>
+          <th class="text-center">Broj</th>
+          <th class="text-center">Datum</th>
+          <th class="text-center">Partner</th>
+          <th class="text-center">IznosBezPdv</th>
+          <th class="text-center">PostoRabata</th>
+          <th class="text-center">Rabat</th>
+          <th class="text-center">IznosSaRabatomBezPdv</th>
+          <th class="text-center">Pdv</th>
+          <th class="text-center">Ukupno</th>
+          <th class="text-center">Remove</th>
         </tr>
         <tr *ngFor="let person of personList; let id = index">
           <td>
-            <span (keyup)="changeValue(id, 'name', $event)" (blur)="updateList(id, 'name', $event)"
-              contenteditable="true">{{ person.name }}</span>
+            <span (keyup)="changeValue(id, 'Broj', $event)" (blur)="updateList(id, 'Broj', $event)"
+              contenteditable="true">{{ person.Broj }}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'age', $event)"
-              (blur)="updateList(id, 'age', $event)">{{ person.age }}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'Datum', $event)"
+              (blur)="updateList(id, 'Datum', $event)">{{ person.Datum }}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'companyName', $event)"
-              (blur)="updateList(id, 'companyName', $event)">{{ person.companyName }}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'IznosBezPdv', $event)"
+              (blur)="updateList(id, 'IznosBezPdv', $event)">{{ person.IznosBezPdv }}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'country', $event)"
-              (blur)="updateList(id, 'country', $event)">{{ person.country }}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'PostoRabata', $event)"
+              (blur)="updateList(id, 'PostoRabata', $event)">{{ person.PostoRabata }}</span>
           </td>
           <td>
-            <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)"
-              (blur)="updateList(id, 'city', $event)">{{ person.city }}</span>
+            <span contenteditable="true" (keyup)="changeValue(id, 'Rabat', $event)"
+              (blur)="updateList(id, 'Rabat', $event)">{{ person.Rabat }}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(id, 'IznosSaRabatomBezPdv', $event)"
+              (blur)="updateList(id, 'IznosSaRabatomBezPdv', $event)">{{ person.IznosSaRabatomBezPdv }}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(id, 'Pdv', $event)"
+              (blur)="updateList(id, 'Pdv', $event)">{{ person.Pdv }}</span>
           </td>
 
           <td>
+            <span contenteditable="true" (keyup)="changeValue(id, 'Ukupno', $event)"
+              (blur)="updateList(id, 'Ukupno', $event)">{{ person.Ukupno }}</span>
+          </td>
+          <td>
+            <span contenteditable="true" (keyup)="changeValue(id, 'Remove', $event)"
+              (blur)="updateList(id, 'Remove', $event)">{{ person.Remove }}</span>
+          </td>
+          <td>
             <span class="table-remove">
-              <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">
+              <button type="button" class="btn btn-danger" (click)="remove(id)">
                 Remove
               </button>
             </span>

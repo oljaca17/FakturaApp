@@ -1,0 +1,87 @@
+  <div class="container-fluid">
+    <h1>Faktura</h1>
+    <br /><br />
+    <div>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Datum</th>
+            <th scope="col">Partner</th>
+            <th scope="col">IznosBezPdv</th>
+            <th scope="col">PostoRabata</th>
+            <th scope="col">Rabat</th>
+            <th scope="col">IznosSaRabatomBezPdv</th>
+            <th scope="col">Pdv</th>
+            <th scope="col">Ukupno</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>23/01/2020</td>
+            <td>Prointer</td>
+            <td>5564,65</td>
+            <td>5</td>
+            <td>278,23</td>
+            <td>5286,41</td>
+            <td>17</td>
+            <td>6185,09</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>04/05/2019</td>
+            <td>Atina Trade</td>
+            <td>2250,55</td>
+            <td>7</td>
+            <td>157,53</td>
+            <td>2093,01</td>
+            <td>17</td>
+            <td>2448,82</td>
+          <tr>
+            <th scope="row">3</th>
+            <td>06/09/2020</td>
+            <td>Markovic Company</td>
+            <td>10457,21</td>
+            <td>10</td>
+            <td>1045,72</td>
+            <td>9411,48</td>
+            <td>17</td>
+            <td>11011,44</td>
+          </tr>
+        </tbody>
+      </table>
+    </div> <br><hr><br>
+
+    <div class="login-wrapper">
+      <div class="card">
+        <div class="card-body">
+          <form class="form-signin" (ngSubmit)="onSubmit(signInForm)" #signInForm="ngForm">
+            <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+
+            <label for="inputEmail" class="sr-only">Email address</label>
+
+            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required
+              autofocus ngModel />
+
+            <label for="inputPassword" class="sr-only">Password</label>
+
+            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password"
+              required ngModel />
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+              Sign in
+            </button>
+
+            <div class="alert alert-danger" role="alert" *ngIf="isFormInvalid">
+              Unesite podatke u sva polja!
+            </div>
+
+            <div class="alert alert-danger" role="alert" *ngIf="areCredentialsInvalid">
+              Pogrešnа email adresa ili šifra!
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

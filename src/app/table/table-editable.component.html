@@ -17,7 +17,7 @@
           <th class="text-center">Company Name</th>
           <th class="text-center">Country</th>
           <th class="text-center">City</th>
-          <th class="text-center">Remove</th>
+          <th class="text-center">Edit/Remove</th>
         </tr>
         <tr *ngFor="let person of personList; let id = index">
           <td>
@@ -40,7 +40,7 @@
             <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)"
               (blur)="updateList(id, 'city', $event)">{{ person.city }}</span>
           </td>
-          
+
           <td>
             <span class="table-remove">
               <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">

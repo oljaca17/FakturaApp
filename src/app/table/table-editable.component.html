@@ -7,7 +7,7 @@
     <div id="table" class="table-editable">
       <span class="table-add float-right mb-3 mr-2">
         <a class="text-success" (click)="add()">
-          <mdb-icon fas icon="plus" size="2x"></mdb-icon>
+          <button type="button" class="btn btn-success">Dodaj</button>
         </a>
       </span>
       <table class="table table-bordered table-responsive-md table-striped text-center">
@@ -17,7 +17,6 @@
           <th class="text-center">Company Name</th>
           <th class="text-center">Country</th>
           <th class="text-center">City</th>
-          <th class="text-center">Sort</th>
           <th class="text-center">Remove</th>
         </tr>
         <tr *ngFor="let person of personList; let id = index">
@@ -41,18 +40,7 @@
             <span contenteditable="true" (keyup)="changeValue(id, 'city', $event)"
               (blur)="updateList(id, 'city', $event)">{{ person.city }}</span>
           </td>
-          <td>
-            <span class="table-up">
-              <a class="indigo-text">
-                <mdb-icon fas icon="long-arrow-alt-up"></mdb-icon>
-              </a>
-            </span>
-            <span class="table-down">
-              <a class="indigo-text">
-                <mdb-icon fas icon="long-arrow-alt-down"></mdb-icon>
-              </a>
-            </span>
-          </td>
+          
           <td>
             <span class="table-remove">
               <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="remove(id)">

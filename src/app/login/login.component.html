@@ -5,7 +5,7 @@
       <table class="table table-bordered">
         <thead>
           <tr>
-            <th scope="col">#</th>
+            <th scope="col">Broj</th>
             <th scope="col">Datum</th>
             <th scope="col">Partner</th>
             <th scope="col">IznosBezPdv</th>
@@ -17,38 +17,36 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <th scope="row">1</th>
-            <td>23/01/2020</td>
-            <td>Prointer</td>
-            <td>5564,65</td>
-            <td>5</td>
-            <td>278,23</td>
-            <td>5286,41</td>
-            <td>17</td>
-            <td>6185,09</td>
+          <tr *ngFor="let faktura of faktureList; let id = index">
+            <td>
+              {{faktura.broj}}
+            </td>
+            <td>
+              {{faktura.datum}}
+            </td>
+            <td>
+              {{faktura.partner}}
+            </td>
+            <td>
+              {{faktura.iznosBezPdv}}
+            </td>
+            <td>
+              {{faktura.postoRabata}}
+            </td>
+            <td>
+              {{faktura.rabat}}
+            </td>
+            <td>
+              {{faktura.iznosSaRabatomBezPdv}}
+            </td>
+            <td>
+              {{faktura.pdv}}
+            </td>
+            <td>
+              {{faktura.ukupno}}
+            </td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td>04/05/2019</td>
-            <td>Atina Trade</td>
-            <td>2250,55</td>
-            <td>7</td>
-            <td>157,53</td>
-            <td>2093,01</td>
-            <td>17</td>
-            <td>2448,82</td>
-          <tr>
-            <th scope="row">3</th>
-            <td>06/09/2020</td>
-            <td>Markovic Company</td>
-            <td>10457,21</td>
-            <td>10</td>
-            <td>1045,72</td>
-            <td>9411,48</td>
-            <td>17</td>
-            <td>11011,44</td>
-          </tr>
+
         </tbody>
       </table>
     </div> <br><hr><br>

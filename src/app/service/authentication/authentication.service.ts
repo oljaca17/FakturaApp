@@ -15,6 +15,7 @@ isAuthenticated = false;
   authenticate(SignInData: SignInData): boolean {
     if(this.checkCredentials(SignInData)){
       this.isAuthenticated = true;
+      localStorage.setItem('isAuthenticated', "true");
       this.router.navigate(['home']);
       return true;
     }
@@ -35,7 +36,13 @@ isAuthenticated = false;
   }
   logout() {
     this.isAuthenticated = false;
+    localStorage.removeItem('isAuthenticated');
     this.router.navigate(['']);
+  }
+
+  setAuthenticated(){
+    this.isAuthenticated = true,
+    this.router.navigate(['home'])
   }
 
 }
